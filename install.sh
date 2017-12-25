@@ -6,7 +6,7 @@ SCRIPTPATH=$(dirname $0)
 
 if [[ $1 == workstation ]]; then 
 	#i3
-	if [[ -e /home/$USER/.config/i3/conf ]]; then
+	if [[ -e /home/$USER/.config/i3/config ]]; then
 		mv /home/$USER/.config/i3/config /home/$USER/.config/i3/config.old
 		cp $SCRIPTPATH/workstation/i3-gaps/config /home/$USER/.config/i3/config
 	else
