@@ -28,6 +28,18 @@ if [[ $1 == workstation ]]; then
 	if [[ -e /etc/fstab.old ]]; then
 		sudo mv /etc/fstab.old /etc/fstab
 	fi
+	
+	#vimrc
+	if [[ -e /home/$USER/.vimrc ]]; then
+		mv /home/$USER/.vimrc.old /home/$USER/.vimrc
+	fi
+
+	#xinitrc
+	if [[ -e /home/$USER/.xinitrc.old ]]; then
+		mv /home/$USER/.xinitrc.old /home/$USER/.xinitrc
+	fi
+
+
 fi
 
 exit 0

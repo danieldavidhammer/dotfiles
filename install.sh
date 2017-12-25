@@ -47,6 +47,23 @@ if [[ $1 == workstation ]]; then
 		sudo cp $SCRIPTPATH/workstation/fstab /etc/
 	fi
 
+	#vimrc
+	if [[ -e /home/$USER/.vimrc ]]; then
+		mv /home/$USER/.vimrc /home/$USER/.vimrc.old
+		cp $SCRIPTPATH/workstation/.vimrc /home/$USER/.vimrc
+	else
+		cp $SCRIPTPATH/workstation/.vimrc /home/$USER/.vimrc
+	fi
+
+	#xinitrc
+	if [[ -e /home/$USER/.xinitrc ]]; then
+		mv /home/$USER/.xinitrc /home/$USER/.xinitrc.old
+		cp $SCRIPTPATH/workstation/.Xresources /home/$USER/.xinitrc
+	else
+		cp $SCRIPTPATH/workstation/.xinitrc /home/$USER/.xinitrc
+	fi
+
+
 
 fi
 
